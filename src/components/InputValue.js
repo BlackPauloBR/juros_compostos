@@ -3,9 +3,13 @@ import { TYPE_VALIDATION, messegerValidation } from '../helpers/helpers.js';
 //TYPE_VALIDATION[3] : "PositiveFloat" || "Float" || "PositiveInterge"
 export default function InputValue({ handleChangeInput, description, type }) {
   const [minValue, setMinValue] = useState(Number.MIN_SAFE_INTEGER);
+  const [maxValue, setMaxValue] = useState(Number.MAX_SAFE_INTEGER);
   const [msgError, setMsgError] = useState(messegerValidation(type, ''));
   useEffect(() => {
     if (type === TYPE_VALIDATION[0] || type === TYPE_VALIDATION[2]) {
+      if (type === TYPE_VALIDATION[2]) {
+        setMaxValue(500);
+      }
       setMinValue(0);
     }
   }, [type]);
@@ -29,6 +33,8 @@ export default function InputValue({ handleChangeInput, description, type }) {
               className="validate"
               onChange={handleChange}
               min={minValue}
+              max={maxValue}
+              style={{ minWidth: '168px' }}
             />
             <label className="active" htmlFor="value">
               {description}
@@ -46,6 +52,8 @@ export default function InputValue({ handleChangeInput, description, type }) {
               width: '180px',
               height: '50px',
               justifyContent: 'left',
+              textAlign: 'center',
+              textJustify: 'center',
             }}
           >
             {msgError}

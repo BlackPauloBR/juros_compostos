@@ -49,6 +49,10 @@ function messegerValidation(type, value) {
   ) {
     msg = 'Por favor, digite um valor positivo do tipo inteiro';
   }
+  //bloqueia array até 500 para nao travar celulares com pouca memoria.)
+  else if (type === TYPE_VALIDATION[2] && value > 500) {
+    msg = 'Por favor, digite um valor menor que 500 parcelas';
+  }
 
   return msg;
 }
