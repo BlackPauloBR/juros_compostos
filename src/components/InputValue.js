@@ -45,6 +45,7 @@ export default function InputValue({ handleChangeInput, description, type }) {
       <li>
         {!!msgError && (
           <span
+            className="card yellow darken-1"
             style={{
               display: 'flex',
               flexDirection: 'flex-start',
@@ -54,6 +55,7 @@ export default function InputValue({ handleChangeInput, description, type }) {
               justifyContent: 'left',
               textAlign: 'center',
               textJustify: 'center',
+              padding: '3px',
             }}
           >
             {msgError}
