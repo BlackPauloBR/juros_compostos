@@ -1,0 +1,44 @@
+contrado:
+
+inputs do usuario:
+- Montante inicial (min:100)
+- Taxa de juros mensal: (min: -12 até +12) .f(2) (step:0.1)
+- Período (meses) (inteiro positivo)
+
+
+
+bolha do mês:
+-indicador do mes (1,2,3,4,5...)(preto bold)
+infos: R$ 1.005,00 parcela montante (cor: azul/esverdiato padrão)(bold)	              	      +R$ 5,00 (montante_current - parcela anterior)(azul/esverdiato padrão)(bold)
+          0,50% (aumente baseado no valor Montante inicial)(azul anil)
+
+alterar cores de valor forem negativos (olhar referência)
+----------------------------------------------------------
+[✔️✔️✔️]------------Roteiro Backend----------[✔️✔️✔️]
+[✔️]Criar formula para realizar o calculo dos J.C. (helpers)
+
+[✔️]Criar montador_array, que encapsula todos os meses em um array de objetos (helpers)
+
+[✔️]Levar array de objetos para o frontend.(helpers)
+
+
+
+----Roteiro Frontend----
+
+[✔️]Em APP criar useState para (arrayMontado, periodo)
+
+em components:
+
+[✔️]criar Input.js (props: value , typeNumber: "float" e "integer > 0 para periodo")
+
+[✔️]verificar se precisa criar o ShowInput
+
+[]criar: BlockInfo.js (props: periodo(id), montante, jurosValue, percentage)
+	colocar padrão Intl, e simbolos R$, +, % .
+
+[]verificar se precisa criar o Show BlockInfo
+
+
+	
+	
+
